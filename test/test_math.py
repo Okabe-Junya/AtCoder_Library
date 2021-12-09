@@ -1,5 +1,7 @@
 import sys
 from math import gcd as gcd_math
+from math import factorial as factorial_math
+from scipy.special import perm
 from random import randint
 
 from ..math_lib import *
@@ -57,11 +59,37 @@ def test_lcm(test_n, test_m):
         sys.exit()
 
 
+# 階乗
+def test_factorial(test_n):
+    fact_n = factorial(test_n)
+    if fact_n == factorial_math(test_n):
+        print("factorial test success")
+    else:
+        print("factorial test failed")
+        sys.exit()
+
+
+# 順列
+def test_permutation(test_n, test_m):
+    if test_n < test_m:
+        test_n, test_m = test_m, test_n
+    perm_n_m = permutation(test_n, test_m)
+    if perm_n_m == perm(test_n, test_m, exact=True):
+        print("permutation test success")
+    else:
+        print("permutation test failed")
+        sys.exit()
+
 def main():
     test_m, test_n, test_list = init()
     test_to_n_base(test_n)
     test_gcd(test_n, test_m, test_list)
     test_lcm(test_n, test_m)
+    test_factorial(test_n)
+    test_permutation(test_n, test_m)
+    
+    print("---")
+    print("All tests passed")
 
 
 if __name__ == "__main__":
