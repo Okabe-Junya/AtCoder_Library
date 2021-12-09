@@ -3,8 +3,8 @@ def n_sum(n):
     return sum(list(map(int, str(n))))
 
 
-# n進数変換
-def base_n(num_10, n):
+# n進数変換 
+def base_n(num_10, n): # num_10: 10進数, n: 基数
     str_n = ''
     while num_10:
         if num_10 % n >= 10:
@@ -15,7 +15,7 @@ def base_n(num_10, n):
 
 
 # 10進数変換
-def base_10(num_n, n):
+def base_10(num_n, n): # num_n: n進数, n: 基数
     num_10 = 0
     for s in str(num_n):
         num_10 *= n
