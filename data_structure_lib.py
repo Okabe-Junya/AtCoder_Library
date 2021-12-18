@@ -14,3 +14,4 @@ def bin_search(num_list, ky):
         if pl > pr :
             break
     return -1
+
