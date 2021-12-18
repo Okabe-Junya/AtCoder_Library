@@ -2,6 +2,7 @@ import sys
 from math import gcd as gcd_math
 from math import factorial as factorial_math
 from scipy.special import perm
+from scipy.special import comb
 from random import randint
 
 from ..math_lib import *
@@ -79,6 +80,17 @@ def test_permutation(test_n, test_m):
     else:
         print("permutation test failed")
         sys.exit()
+        
+# 組み合わせ
+def test_cmb(test_n, test_m):
+    if test_n < test_m:
+        test_n, test_m = test_m, test_n
+    cmb_n_m = cmb(test_n, test_m)
+    if cmb_n_m == comb(test_n, test_m, exact=True):
+        print("cmb test success")
+    else:
+        print("cmb test failed")
+        sys.exit()
 
 def main():
     test_m, test_n, test_list = init()
@@ -87,6 +99,7 @@ def main():
     test_lcm(test_n, test_m)
     test_factorial(test_n)
     test_permutation(test_n, test_m)
+    test_cmb(test_n, test_m)
     
     print("---")
     print("All tests passed")
