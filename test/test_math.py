@@ -8,10 +8,6 @@ from random import randint
 from ..math_lib import *
 
 
-# How to runnning the tests:
-# $ cd ...
-# $ python3 -m library.test.test_math
-
 def init():
     test_m = randint(1, 1000)
     test_n = randint(1, 1000)
@@ -105,6 +101,11 @@ def test_pos(test_x, test_n, test_m):
     
 
 def main():
+    """docstring
+    # How to runnning the tests:
+    # $ cd ...
+    # $ python3 -m library.test.test_math
+    """
     test_m, test_n, test_list = init()
     test_to_n_base(test_n)
     test_gcd(test_n, test_m, test_list)
