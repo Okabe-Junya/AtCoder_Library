@@ -21,7 +21,7 @@ def init():
 
 # n進数変換
 def test_to_n_base(test_n):
-    tmp =randint(1, 10)
+    tmp = randint(1, 10)
     n_conversion = base_n(test_n, tmp)
     if base_10(n_conversion, tmp) == test_n:
         print("to_n test success")
@@ -76,7 +76,8 @@ def test_permutation(test_n, test_m):
     else:
         print("permutation test failed")
         sys.exit()
-        
+
+
 # 組み合わせ
 def test_cmb(test_n, test_m):
     if test_n < test_m:
@@ -87,8 +88,8 @@ def test_cmb(test_n, test_m):
     else:
         print("cmb test failed")
         sys.exit()
-        
-        
+
+
 # 冪乗の剰余
 def test_pos(test_x, test_n, test_m):
     pos_x_n_m = (test_x ** test_n) % test_m
@@ -98,7 +99,7 @@ def test_pos(test_x, test_n, test_m):
     else:
         print("pos test failed")
         sys.exit()
-    
+
 
 def main():
     """docstring
@@ -114,7 +115,7 @@ def main():
     test_permutation(test_n, test_m)
     test_cmb(test_n, test_m)
     test_pos(randint(1, 1000), test_n, test_m)
-    
+
     print("---")
     print("All tests passed")
 
