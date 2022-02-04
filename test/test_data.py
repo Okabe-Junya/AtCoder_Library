@@ -36,16 +36,30 @@ def test_binsearch(test_list, key):
             print("bin_search test failed")
             sys.exit()
 
+
+# BST
+def test_BST():
+    l = [randint(1, 100) for _ in range(20)]
+    print("sorted list:", sorted(l))
+    tree = BST(l)
+    if tree.search_min() != min(l):
+        print("search_min test failed")
+        sys.exit()
+    if tree.search_max() != max(l):
+        print("search_max test failed")
+        sys.exit()
+
+
 def main():
     """
     # How to runnning the tests:
     # $ cd ...
     # $ python3 -m library.test.test_math
     """
-    
+
     test_m, test_n, test_list = init()
     test_binsearch(test_list, test_n)
-    
+
     print("---")
     print("All tests passed")
 
