@@ -91,6 +91,18 @@ def test_cmb(test_n, test_m):
     else:
         print("cmb test failed")
         sys.exit()
+        
+        
+# 冪乗の剰余
+def test_pos(test_x, test_n, test_m):
+    pos_x_n_m = (test_x ** test_n) % test_m
+    pos_res = pos(test_x, test_n, test_m)
+    if pos_x_n_m == pos_res:
+        print("pos test success")
+    else:
+        print("pos test failed")
+        sys.exit()
+    
 
 def main():
     test_m, test_n, test_list = init()
@@ -100,6 +112,7 @@ def main():
     test_factorial(test_n)
     test_permutation(test_n, test_m)
     test_cmb(test_n, test_m)
+    test_pos(randint(1, 1000), test_n, test_m)
     
     print("---")
     print("All tests passed")

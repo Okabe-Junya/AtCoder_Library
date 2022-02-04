@@ -3,8 +3,8 @@ def n_sum(n):
     return sum(list(map(int, str(n))))
 
 
-# n進数変換 
-def base_n(num_10, n): # num_10: 10進数, n: 基数
+# n進数変換
+def base_n(num_10, n):  # num_10: 10進数, n: 基数
     str_n = ''
     while num_10:
         if num_10 % n >= 10:
@@ -15,7 +15,7 @@ def base_n(num_10, n): # num_10: 10進数, n: 基数
 
 
 # 10進数変換
-def base_10(num_n, n): # num_n: n進数, n: 基数
+def base_10(num_n, n):  # num_n: n進数, n: 基数
     num_10 = 0
     for s in str(num_n):
         num_10 *= n
@@ -103,3 +103,13 @@ def make_divistors(n):
                 upper_divistors.append(n // i)
         i += 1
     return lower_divistors + upper_divistors[::-1]
+
+
+# xのn乗をmで割った余り
+def pos(x, n, m):
+    if n == 0:
+        return 1
+    res = pos(x*x % m, n//2, m)
+    if n % 2 == 1:
+        res = res*x % m
+    return res
