@@ -1,3 +1,6 @@
+from collections import deque
+
+
 #  二分探索
 def bin_search(num_list, ky):
     num_list.sort()
@@ -31,7 +34,8 @@ class BST:
         for num in num_list:
             self.insert_node(num)
         return
-        
+    
+    
     # 最小値の探索
     def search_min(self):
         root = self.root
@@ -41,7 +45,7 @@ class BST:
             root = root.left
         return root.data
         
-    
+
     # 最大値の探索
     def search_max(self):
         root = self.root
@@ -92,20 +96,15 @@ class BST:
                     root.right = Node(data)
                     return
     
+    
     # 削除
     def delete_node(self, data):
+        if not self.search_tree(data):
+            print("{} is not in the tree".format(data))
+            return
         return
     
     
     # 表示
     def display(self):
         return
-
-        
-                
-from random import randint
-l = [randint(1, 100) for _ in range(20)]
-print(sorted(l))
-tree = BST(l)
-print("min", tree.search_min())
-print("max", tree.search_max())
