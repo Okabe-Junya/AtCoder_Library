@@ -4,7 +4,6 @@ from math import factorial as factorial_math
 from scipy.special import perm
 from scipy.special import comb
 from random import randint
-import pytest
 
 import data_structure_lib
 import math_lib
@@ -21,28 +20,16 @@ def init():
 
 
 # 二分探索
-"""
-def test_binsearch(test_list, key):
+def test_binsearch():
+    _, key, test_list = init()
     res = data_structure_lib.bin_search(test_list, key)
     if res == -1:
-        if key not in test_list:
-            print("key not in list")
-            print("bin_search test success")
-        else:
-            print("key in list")
-            print("bin_search test failed")
-            sys.exit()
+        assert key not in test_list
     else:
-        test_list.sort()
-        if test_list[res] == key:
-            print("key in list")
-            print("bin_search test success")
-        else:
-            print("incorrect index")
-            print("bin_search test failed")
-            sys.exit()
+        assert res == test_list.index(key)
 
 
+"""
 # BST
 def test_BST():
     l = [randint(1, 100) for _ in range(20)]
@@ -119,7 +106,8 @@ def test_pos():
 
 
 def main():
-    print("all test success")
+    msg = ''
+    print(msg)
 
 
 if __name__ == '__main__':
