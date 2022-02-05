@@ -106,7 +106,12 @@ def test_pos():
 
 
 def main():
-    msg = ''
+    msg = msg = '''
+    This module is test code.
+    If you want to run tests, using pytest.
+    If you run %pytest in your terminal, 
+    all the tests will be executed automatically.
+    '''
     print(msg)
 
 
