@@ -117,6 +117,7 @@ def dfs(e, v, seen): # e: エッジの集合，v: ノード，seen: 既に訪れ
             dfs(e, n, seen)
     return seen
 
+"""
 n, m = map(int, input().split())
 e = [[0 for _ in range(n + 1)] for _ in range(n + 1)]
 for _ in range(m):
@@ -130,3 +131,4 @@ for i in range(1, n + 1):
         l = dfs(e, i, seen)
         ans += sum(l)
 print(ans)
+"""
