@@ -108,3 +108,25 @@ class BST:
     # 表示
     def display(self):
         return
+
+def dfs(e, v, seen): # e: エッジの集合，v: ノード，seen: 既に訪れたノードの集合
+    seen[v] = True
+    m = len(e[0])
+    for n in range(m):
+        if e[v][n] & (seen[n] == False) & (n != v):
+            dfs(e, n, seen)
+    return seen
+
+n, m = map(int, input().split())
+e = [[0 for _ in range(n + 1)] for _ in range(n + 1)]
+for _ in range(m):
+    a, b = map(int, input().split())
+    e[a][b] = 1
+    
+ans = 0
+for i in range(1, n + 1):
+    seen = [False for _ in range(n + 1)]
+    if seen[i] == False:
+        l = dfs(e, i, seen)
+        ans += sum(l)
+print(ans)
