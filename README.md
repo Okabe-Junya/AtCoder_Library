@@ -25,7 +25,11 @@ AtCoder用ライブラリ．標準入力，各種データ構造，数学的な�
 
 ## Other
 
+更新中
+
 ### Package
+
+更新中
 
 ## License
 
