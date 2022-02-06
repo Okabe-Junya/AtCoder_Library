@@ -76,6 +76,15 @@ def test_lcm():
     assert lcm_mn == test_n * test_m // math_lib.gcd(test_n, test_m)
 
 
+# 順列
+def test_perm():
+    test_m, _, _ = init()
+    test_n = randint(1, 10)
+    if test_m < test_n:
+        test_m, test_n = test_n, test_m
+    perm_m_n = math_lib.permutation(test_m, test_n)
+    assert perm_m_n == perm(test_m, test_n)
+
 # 階乗
 def test_factorial():
     _, test_n, _ = init()
