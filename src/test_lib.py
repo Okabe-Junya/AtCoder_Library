@@ -29,6 +29,13 @@ def test_binsearch():
         assert res == test_list.index(key)
 
 
+# ダイクストラ法，ワーシャルフロイド法
+def test_warshall_floyd():
+    _, _, test_list = init()
+    res = data_structure_lib.warshall_floyd(test_list)
+    assert 1 == 1
+
+
 """
 # BST
 def test_BST():
