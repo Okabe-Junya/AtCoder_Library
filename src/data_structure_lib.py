@@ -6,15 +6,15 @@ def bin_search(num_list, ky):
     num_list.sort()
     pl = 0
     pr = len(num_list) - 1
-    while True :
+    while True:
         pc = (pl + pr) // 2
-        if num_list[pc] == ky :
+        if num_list[pc] == ky:
             return pc
-        elif num_list[pc] > ky :
+        elif num_list[pc] > ky:
             pr = pc - 1
-        else :
+        else:
             pl = pc + 1
-        if pl > pr :
+        if pl > pr:
             break
     return -1
 
@@ -27,6 +27,7 @@ class Node:
         self.right = right
 
 
+
 # 二分探索木
 class BST:
     def __init__(self, num_list) -> None:
@@ -34,8 +35,8 @@ class BST:
         for num in num_list:
             self.insert_node(num)
         return
-    
-    
+
+
     # 最小値の探索
     def search_min(self):
         root = self.root
@@ -44,7 +45,7 @@ class BST:
         while root.left is not None:
             root = root.left
         return root.data
-        
+
 
     # 最大値の探索
     def search_max(self):
@@ -54,8 +55,8 @@ class BST:
         while root.right is not None:
             root = root.right
         return root.data
-    
-    
+
+
     # 探索
     def search_tree(self, key) -> bool:
         root = self.root
@@ -74,8 +75,8 @@ class BST:
                     root = root.right
                 else:
                     return False
-    
-    
+
+
     # 挿入
     def insert_node(self, data):
         root = self.root
@@ -95,38 +96,39 @@ class BST:
                 else:
                     root.right = Node(data)
                     return
-    
-    
+
     # 削除
+
     def delete_node(self, data):
         if not self.search_tree(data):
             print("{} is not in the tree".format(data))
             return
         return
-    
-    
+
     # 表示
+
     def display(self):
         return
-    
+
     # 深さ優先探索（木）
     # 行き掛け
-    
+
     # 通りがけ
-    
+
     # 帰りがけ
-    
+
     # 幅優先探索（木）
 
 
 # 深さ優先探索（グラフ）
-def dfs(e, v, seen): # e: エッジの集合，v: ノード，seen: 既に訪れたノードの集合
+def dfs(e, v, seen):  # e: エッジの集合，v: ノード，seen: 既に訪れたノードの集合
     seen[v] = True
     m = len(e[0])
     for n in range(m):
         if e[v][n] & (seen[n] == False) & (n != v):
             dfs(e, n, seen)
     return seen
+
 
 """
 n, m = map(int, input().split())
@@ -150,6 +152,14 @@ print(ans)
 # ダイクストラ法
 
 # ワーシャルフロイド法
+def warshall_floyd(d):  # d[i][j]: ノードiからノードjへの距離
+    d_min = d.copy()
+    n = len(d)
+    for k in range(n):
+        for i in range(n):
+            for j in range(n):
+                d_min[i][j] = min(d_min[i][j], d_min[i][k] + d_min[k][j])
+    return d_min
 
 # 最大流
 
