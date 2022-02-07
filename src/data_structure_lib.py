@@ -108,7 +108,18 @@ class BST:
     # 表示
     def display(self):
         return
+    
+    # 深さ優先探索（木）
+    # 行き掛け
+    
+    # 通りがけ
+    
+    # 帰りがけ
+    
+    # 幅優先探索（木）
 
+
+# 深さ優先探索（グラフ）
 def dfs(e, v, seen): # e: エッジの集合，v: ノード，seen: 既に訪れたノードの集合
     seen[v] = True
     m = len(e[0])
@@ -132,3 +143,18 @@ for i in range(1, n + 1):
         ans += sum(l)
 print(ans)
 """
+
+
+# 幅優先探索
+
+# ダイクストラ法
+
+# ワーシャルフロイド法
+
+# 最大流
+
+# 最小カット
+
+# 二部マッチング
+
+# union-find
