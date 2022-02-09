@@ -1,20 +1,5 @@
 # AtCoder Library
 
-<p align=left>
-<a href="#">
-<img src="https://img.shields.io/github/languages/code-size/Okabe-Junya/AtCoder_library">
-</a>
-<a href="#">
-<img src="https://img.shields.io/maintenance/yes/2022">
-</a>
-<a href="#">
-<img src="https://img.shields.io/github/last-commit/Okabe-Junya/AtCoder_library">
-</a>
-<a href="#">
-<img src="https://img.shields.io/github/license/Okabe-Junya/AtCoder_library">
-</a>
-</p>
-
 ## Abstract
 
 AtCoder用ライブラリ．標準入力，各種データ構造，典型的な数学用のライブラリをアーカイブする．
@@ -51,12 +36,12 @@ AtCoder用ライブラリ．標準入力，各種データ構造，典型的な�
 6. 複数行2列整数入力
 7. `nm` 行列（整数）
 
-## Other
-
-### Package
+## Package
 
 更新中
 
-### License
+## Other
+
+## License
 
 The code in this repo is released under the [MIT License](https://github.com/Okabe-Junya/AtCoder_library/blob/main/LICENSE).
