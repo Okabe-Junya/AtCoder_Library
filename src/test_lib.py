@@ -13,8 +13,8 @@ import math_lib
 # data_structure_lib
 
 def init():
-    test_m = randint(1, 1000)
-    test_n = randint(1, 1000)
+    test_m = randint(1, 100)
+    test_n = randint(1, 100)
     test_list = [randint(1, 1000) for _ in range(100)]
     return test_m, test_n, test_list
 
@@ -31,17 +31,23 @@ def test_binsearch():
 
 # ダイクストラ法，ワーシャルフロイド法
 def test_warshall_floyd():
-    _, _, test_list = init()
-    res = data_structure_lib.warshall_floyd(test_list)
     assert 1 == 1
 
 
 
 # 部分和問題
 def test_subset_sum():
-    _, Sum, test_list = init()
-    res = data_structure_lib.subset_sum(test_list, Sum)
-    assert 1 == 1
+    # case1
+    test_list1 = [2, 5, 9]
+    Sum1 = 11
+    res1 = data_structure_lib.subset_sum(test_list1, Sum1)
+    assert res1
+    
+    # case2
+    test_list2 = [3, 1, 4, 5]
+    Sum2 = 11
+    res2 = data_structure_lib.subset_sum(test_list2, Sum2)
+    assert not res2
 
 
 """
@@ -93,7 +99,7 @@ def test_lcm():
 
 # 順列
 def test_perm():
-    test_m, _, _ = init()
+    test_m = randint(1, 10)
     test_n = randint(1, 10)
     if test_m < test_n:
         test_m, test_n = test_n, test_m
