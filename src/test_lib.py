@@ -36,6 +36,14 @@ def test_warshall_floyd():
     assert 1 == 1
 
 
+
+# 部分和問題
+def test_subset_sum():
+    _, Sum, test_list = init()
+    res = data_structure_lib.subset_sum(test_list, Sum)
+    assert 1 == 1
+
+
 """
 # BST
 def test_BST():
