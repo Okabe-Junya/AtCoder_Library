@@ -34,13 +34,23 @@ def gcd(a, b):
 
 # 最大公約数(リスト)
 def gcd_list(l):
-    from math import gcd as gcd_list
-    return gcd_list(*l)
+    res = l[0]
+    for num in l:
+        res = gcd(res, num)
+    return res
 
 
 # 最小公倍数
 def lcm(a, b):
     return a * b // gcd(a, b)
+
+
+# 最小公倍数（リスト）
+def lcm_list(l):
+    res = l[0]
+    for i in l:
+        res = lcm(res, i)
+    return res
 
 
 # 階乗
