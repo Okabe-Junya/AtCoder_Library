@@ -1,8 +1,9 @@
-site_name: My Docs
+site_name: AtCoder Library
 docs_dir: docs
 
 theme:
-  name: readthedocs
+  name: material
+  language: ja
 
 nav:
   - はじめに: index.md
@@ -13,13 +14,28 @@ nav:
 
 markdown_extensions:
   - admonition
+  - meta
+  - pymdownx.mark
+  - pymdownx.magiclink
+  - pymdownx.emoji
+  - pymdownx.superfences
+  - pymdownx.keys
+  - def_list
   - codehilite:
       linenums: true
-      guess_lang: false
+      guess_lang: true
       use_pygments: false
       noclasses: true
   - toc:
       permalink: true
+
+plugins:
+  - search
+  - git-revision-date-localized
+
+extra:
+  search:
+    language: 'jp'
 
 extra_css:
   - css/ex_style.css
