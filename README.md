@@ -51,12 +51,12 @@ AtCoder用ライブラリ．標準入力，各種データ構造，典型的な�
 6. 複数行2列整数入力
 7. `nm` 行列（整数）
 
-## Other
-
-### Package
+## Package
 
 更新中
 
-### License
+## Other
+
+## License
 
 The code in this repo is released under the [MIT License](https://github.com/Okabe-Junya/AtCoder_library/blob/main/LICENSE).
