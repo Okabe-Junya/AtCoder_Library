@@ -1,4 +1,6 @@
 from collections import deque
+import heapq
+import bisect
 
 
 #  二分探索
@@ -17,6 +19,14 @@ def bin_search(num_list, ky):
         if pl > pr:
             break
     return -1
+
+
+# 二分探索（lower_bound）
+def lower_bound(num_list, ky):
+    pl = bisect.bisect_left(num_list, ky)
+    # pr = bisect.bisect_right(num_list, ky)
+    return pl
+
 
 
 # 木構造のノード
@@ -97,25 +107,49 @@ class BST:
                     root.right = Node(data)
                     return
 
-    # 削除
 
+    # 削除
     def delete_node(self, data):
         if not self.search_tree(data):
             print("{} is not in the tree".format(data))
             return
         return
 
-    # 表示
 
+    # 表示
     def display(self):
         return
 
     # 深さ優先探索（木）
     # 行き掛け
+    def preorder(self, root):
+        root = self.root
+        if root is None:
+            return
+        print(root.data)
+        self.preorder(root.left)
+        self.preorder(root.right)
+
 
     # 通りがけ
+    def inorder(self, root):
+        root = self.root
+        if root is None:
+            return
+        self.inorder(root.left)
+        print(root.data)
+        self.inorder(root.right)
+
 
     # 帰りがけ
+    def postorder(self, root):
+        root = self.root
+        if root is None:
+            return
+        self.postorder(root.left)
+        self.postorder(root.right)
+        print(root.data)
+
 
     # 幅優先探索（木）
 
@@ -150,6 +184,21 @@ print(ans)
 # 幅優先探索
 
 # ダイクストラ法
+def dijkstra(adj, n, s=0):  # adj: 隣接行列，n: ノード数，s: 始点ノード
+    INF = 10 ** 9
+    d = [INF] * n # 始点からの最短距離
+    d[s] = 0 # 始点ノードの距離は0
+    seen = [False] * n # 既に訪れたかどうか
+    tmp = [(0, s)] 
+    while tmp:
+        tmp_v = heapq.heappop(tmp)[1]
+        seen[tmp_v] = True
+        for t, c in adj[tmp_v]:
+            if (d[t] > d[tmp_v] + c) & (not seen[t]):
+                d[t] = d[tmp_v] + c
+                heapq.heappush(tmp, (d[t], t))
+    return d
+
 
 # ワーシャルフロイド法
 def warshall_floyd(d):  # d[i][j]: ノードiからノードjへの距離
