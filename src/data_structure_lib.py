@@ -1,5 +1,6 @@
 from collections import deque
 import heapq
+import bisect
 
 
 #  二分探索
@@ -18,6 +19,14 @@ def bin_search(num_list, ky):
         if pl > pr:
             break
     return -1
+
+
+# 二分探索（lower_bound）
+def lower_bound(num_list, ky):
+    pl = bisect.bisect_left(num_list, ky)
+    # pr = bisect.bisect_right(num_list, ky)
+    return pl
+
 
 
 # 木構造のノード
