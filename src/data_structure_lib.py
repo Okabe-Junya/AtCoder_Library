@@ -97,25 +97,49 @@ class BST:
                     root.right = Node(data)
                     return
 
-    # 削除
 
+    # 削除
     def delete_node(self, data):
         if not self.search_tree(data):
             print("{} is not in the tree".format(data))
             return
         return
 
-    # 表示
 
+    # 表示
     def display(self):
         return
 
     # 深さ優先探索（木）
     # 行き掛け
+    def preorder(self, root):
+        root = self.root
+        if root is None:
+            return
+        print(root.data)
+        self.preorder(root.left)
+        self.preorder(root.right)
+
 
     # 通りがけ
+    def inorder(self, root):
+        root = self.root
+        if root is None:
+            return
+        self.inorder(root.left)
+        print(root.data)
+        self.inorder(root.right)
+
 
     # 帰りがけ
+    def postorder(self, root):
+        root = self.root
+        if root is None:
+            return
+        self.postorder(root.left)
+        self.postorder(root.right)
+        print(root.data)
+
 
     # 幅優先探索（木）
 
