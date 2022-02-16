@@ -13,7 +13,19 @@ nav:
       - 標準入力用ライブラリ: stdio.md
   - その他: other.md
 
+extra:
+  search:
+    language: 'jp'
+
+extra_css:
+  - css/ex_style.css
+
+extra_javascript: 
+  - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
 markdown_extensions:
+  - mdx_math:
+      enable_dollar_delimiter: true
   - admonition
   - meta
   - pymdownx.mark
@@ -33,10 +45,3 @@ markdown_extensions:
 plugins:
   - search
   - git-revision-date-localized
-
-extra:
-  search:
-    language: 'jp'
-
-extra_css:
-  - css/ex_style.css

@@ -518,8 +518,8 @@
 <span class="mi">13</span>
 </code></pre></div>
 <h2 id="10">10進数変換<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
-<p>第一引数に与えられた数値を，10進数に変換して返す．基数は第二引数で与える．</p>
-<p>【】</p>
+<p>【概要】<br />
+第一引数に与えられた数値を，10進数に変換して返す．基数は第二引数で与える．</p>
 <p>【サンプル】</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">base_10</span><span class="p">(</span><span class="mi">101</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="mi">5</span>
@@ -528,7 +528,8 @@
 <span class="mi">7</span>
 </code></pre></div>
 <h2 id="_2">最大公約数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>【】</p>
+<p>【概要】<br />
+<code>gcd</code> では引数で与えられた2つの数値の最大公約数を返す． <code>gcd_list</code> では，引数で与えられたリストの最大公約数を返す．</p>
 <p>【サンプル】</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">gcd</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
 <span class="mi">6</span>
@@ -540,7 +541,8 @@
 <span class="mi">6</span>
 </code></pre></div>
 <h2 id="_3">最小公倍数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>【概要】</p>
+<p>【概要】<br />
+<code>lcm</code> では引数で与えられた2つの数値の最小公倍数を返す． <code>lcm_list</code> では，引数で与えられたリストの最小公倍数を返す．</p>
 <p>【サンプル】</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">lcm</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
 <span class="mi">36</span>
@@ -552,7 +554,8 @@
 <span class="mi">36</span>
 </code></pre></div>
 <h2 id="_4">階乗<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>【概要】</p>
+<p>【概要】<br />
+引数で与えられた数値の階乗を返す．</p>
 <p>【サンプル】</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="mi">120</span>
@@ -561,7 +564,8 @@
 <span class="mi">5040</span>
 </code></pre></div>
 <h2 id="_5">順列<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>【概要】</p>
+<p>【概要】<br />
+第一引数を <script type="math/tex">n</script>，第二引数を <script type="math/tex">r</script> としたとき，<script type="math/tex">_nP_r</script>を返す．</p>
 <p>【サンプル】</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">permutation</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="mi">60</span>
@@ -570,7 +574,8 @@
 <span class="mi">90</span>
 </code></pre></div>
 <h2 id="_6">組合せ<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>【概要】</p>
+<p>【概要】<br />
+第一引数を <script type="math/tex">n</script>，第二引数を <script type="math/tex">r</script> としたとき，<script type="math/tex">_nC_r</script>を返す．</p>
 <p>【サンプル】</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">cmb</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="mi">10</span>
@@ -579,7 +584,8 @@
 <span class="mi">45</span>
 </code></pre></div>
 <h2 id="_7">エラトステネスの篩<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p>【概要】</p>
+<p>【概要】<br />
+引数で与えられた数値以下の素数をリストとして返す．</p>
 <p>【サンプル】</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">sieve</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
@@ -588,7 +594,8 @@
 <span class="p">([</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
 </code></pre></div>
 <h2 id="_8">素因数分解<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<p>【概要】</p>
+<p>【概要】<br />
+引数で与えられた数値の約数をリストで返す．ただし，<script type="math/tex">n = \Pi_{i=1}^k a_i^{b_i}</script> であるとき，<script type="math/tex">[[a_1,\, b_1],\cdots [a_k,\, b_k]]</script> の形式で返される．</p>
 <p>【サンプル】</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">factorization</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
 <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
@@ -600,7 +607,8 @@
 <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
 </code></pre></div>
 <h2 id="_9">約数列挙<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<p>【概要】</p>
+<p>【概要】<br />
+引数で与えられた数値の約数をリストで返す．</p>
 <p>【サンプル】</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">make_divistors</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
@@ -609,7 +617,8 @@
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">48</span><span class="p">]</span>
 </code></pre></div>
 <h2 id="_10">冪乗の剰余<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
-<p>【概要】</p>
+<p>【概要】<br />
+第一引数を <script type="math/tex">n</script>，第二引数を <script type="math/tex">m</script>，第三引数を <script type="math/tex">p</script> としたとき，<script type="math/tex">n^m \mod\, p</script> を返す．</p>
 <p>【サンプル】</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">pos</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="mi">2</span>
@@ -623,7 +632,7 @@
   <small>
     
       最終更新日:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 16, 2022</span>
       
     
   </small>
@@ -697,6 +706,8 @@
     
     
       <script src="../assets/javascripts/bundle.e3b2bf44.min.js"></script>
+      
+        <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
     
   </body>
