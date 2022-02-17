@@ -1,4 +1,5 @@
 site_name: AtCoder Library
+site_url: https://okabe-junya.github.io/AtCoder_library/
 docs_dir: docs
 
 theme:
@@ -20,8 +21,8 @@ extra:
 extra_css:
   - css/ex_style.css
 
-extra_javascript: 
-  - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML
 
 markdown_extensions:
   - mdx_math:
