@@ -1,6 +1,9 @@
 # AtCoder Library
 
 <p align=left>
+<a href="https://okabe-junya.github.io/AtCoder_library/">
+<img src="https://img.shields.io/badge/docs-link-blue">
+</a>
 <a href="#">
 <img src="https://img.shields.io/github/languages/code-size/Okabe-Junya/AtCoder_library">
 </a>
@@ -27,9 +30,9 @@ AtCoder用ライブラリ．標準入力，各種データ構造，典型的な�
 2. Binary Search Tree
 3. 深さ優先探索，幅優先探索
 4. ダイクストラ法，ワーシャルフロイド法
-5. 最大流，最小カット
-6. 二部マッチング
-7. union-find
+5. 最大流，最小カット（更新中）
+6. 二部マッチング（更新中）
+7. union-find（更新中）
 8. ナップザック問題，部分和問題
 
 ### 数学用ライブラリ
@@ -56,6 +59,8 @@ AtCoder用ライブラリ．標準入力，各種データ構造，典型的な�
 更新中
 
 ## Other
+
+- [ドキュメント](https://okabe-junya.github.io/AtCoder_library/)
 
 ## License
 

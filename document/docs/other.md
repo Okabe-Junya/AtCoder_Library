@@ -1,6 +1,12 @@
 # その他
 
+## ライセンス
+
+本リポジトリで公開されているすべてのコードは[MITライセンス](https://github.com/Okabe-Junya/AtCoder_library/blob/main/LICENSE)で公開されています．
+
 ## 参考サイト
+
+本リポジトリの作成のために参考にしたサイトを以下に記載します．
 
 - [計算量オーダーの求め方を総整理！ 〜 どこから log が出て来るか 〜](https://qiita.com/drken/items/872ebc3a2b5caaa4a0d0)
 - [「1000000007 で割ったあまり」の求め方を総特集！ 〜 逆元から離散対数まで 〜](https://qiita.com/drken/items/3b4fdf0a78e7a138cd9a)
