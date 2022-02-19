@@ -1,31 +1,32 @@
 # 各位の和
 def n_sum(n):
-    return sum(list(map(int, str(n))))
+    l = list(str(n))
+    return sum([int(i) for i in l])
 
 
 # n進数変換
-def base_n(num_10, n):  # num_10: 10進数, n: 基数
-    str_n = ''
-    while num_10: # num_10 != 0
-        if num_10 % n >= 10:
+def nd_conv(num, base):  # num: 10進数, base: 基数(2~9)
+    res = ''
+    while num:  # num_10 != 0
+        if num % base >= 10:
             return -1
-        str_n += str(num_10 % n)
-        num_10 //= n
-    return int(str_n[::-1])
+        res += str(num % base)
+        num //= base
+    return int(res[::-1])
 
 
 # 10進数変換
-def base_10(num_n, n):  # num_n: n進数, n: 基数
-    num_10 = 0
-    for s in str(num_n):
-        num_10 *= n
-        num_10 += int(s)
-    return num_10
+def d_conv(num, base):  # num: n進数, base: 基数
+    res = 0
+    for s in str(num):
+        res *= base
+        res += int(s)
+    return res
 
 
 # 最大公約数
 def gcd(a, b):
-    if a < b:
+    if a < b:  # let a >= b
         a, b = b, a
     if b == 0:
         return a
@@ -34,6 +35,12 @@ def gcd(a, b):
 
 # 最大公約数(リスト)
 def gcd_list(l):
+    def gcd(a, b):
+        if a < b:  # let a >= b
+            a, b = b, a
+        if b == 0:
+            return a
+        return gcd(b, a % b)
     res = l[0]
     for num in l:
         res = gcd(res, num)
@@ -42,11 +49,25 @@ def gcd_list(l):
 
 # 最小公倍数
 def lcm(a, b):
+    def gcd(a, b):
+        if a < b:  # let a >= b
+            a, b = b, a
+        if b == 0:
+            return a
+        return gcd(b, a % b)
     return a * b // gcd(a, b)
 
 
 # 最小公倍数（リスト）
 def lcm_list(l):
+    def lcm(a, b):
+        def gcd(a, b):
+            if a < b:  # let a >= b
+                a, b = b, a
+            if b == 0:
+                return a
+            return gcd(b, a % b)
+        return a * b // gcd(a, b)
     res = l[0]
     for i in l:
         res = lcm(res, i)
@@ -62,11 +83,19 @@ def factorial(n):  # n > 0
 
 # 順列
 def permutation(n, r):  # n > 0, r <= n
+    def factorial(n):  # n > 0
+        if n == 0:
+            return 1
+        return n * factorial(n - 1)
     return factorial(n) // factorial(n - r)
 
 
 # 組み合わせ
 def cmb(n, r):  # n > 0, r <= n
+    def factorial(n):  # n > 0
+        if n == 0:
+            return 1
+        return n * factorial(n - 1)
     return factorial(n) // (factorial(n - r) * factorial(r))
 
 
