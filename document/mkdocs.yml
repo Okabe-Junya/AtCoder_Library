@@ -1,5 +1,5 @@
-site_name: AtCoder Library
-site_url: https://okabe-junya.github.io/AtCoder_library/
+site_name: 'AtCoder Library'
+site_url: 'https://okabe-junya.github.io/AtCoder_library/'
 docs_dir: docs
 
 theme:
