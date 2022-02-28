@@ -54,9 +54,8 @@ def test_perm():
     perm_m_n = math_lib.permutation(test_m, test_n)
     assert perm_m_n == perm(test_m, test_n)
 
+
 # 階乗
-
-
 def test_factorial():
     _, test_n, _ = init()
     fact_n = math_lib.factorial(test_n)
@@ -93,6 +92,8 @@ def test_inv():
 
 
 # 二項係数の剰余
+def nck_mod():
+    assert 1 == 1
 
 # --------------------------------------------------
 # main
