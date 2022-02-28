@@ -21,7 +21,7 @@ def test_to_n_base():
     tmp = randint(1, 10)
     test_n = randint(1, 1000)
     n_conversion = math_lib.nd_conv(test_n, tmp)
-    assert math_lib.nd_conv(n_conversion, tmp) == test_n
+    assert math_lib.d_conv(n_conversion, tmp) == test_n
 
 
 # 最大公約数
@@ -86,12 +86,10 @@ def test_inv():
     test_n, test_m, _ = init()
     if test_n < test_m:
         test_n, test_m = test_m, test_n
-    if len(math_lib.make_divistors(test_n)) != 2:
-        print("test_m is not prime number")
-        return
-    inv_nm = math_lib.inv(test_n, test_m)
-    inv_nm2 = math_lib.ext_gcd(test_n, test_m)[1]
-    assert inv_nm == inv_nm2
+    if len(math_lib.make_divistors(test_n)) == 2:
+        inv_nm = math_lib.inv(test_n, test_m)
+        inv_nm2 = math_lib.ext_gcd(test_n, test_m)[1]
+        assert inv_nm == inv_nm2
 
 
 # 二項係数の剰余
