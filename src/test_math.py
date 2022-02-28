@@ -9,9 +9,6 @@ import data_structure_lib
 import math_lib
 
 
-# --------------------------------------------------
-# data_structure_lib
-
 def init():
     test_m = randint(1, 100)
     test_n = randint(1, 100)
@@ -19,61 +16,12 @@ def init():
     return test_m, test_n, test_list
 
 
-# 二分探索
-def test_binsearch():
-    _, key, test_list = init()
-    res = data_structure_lib.bin_search(test_list, key)
-    if res == -1:
-        assert key not in test_list
-    else:
-        assert res == test_list.index(key)
-
-
-# ダイクストラ法，ワーシャルフロイド法
-def test_warshall_floyd():
-    assert 1 == 1
-
-
-
-# 部分和問題
-def test_subset_sum():
-    # case1
-    test_list1 = [2, 5, 9]
-    Sum1 = 11
-    res1 = data_structure_lib.subset_sum(test_list1, Sum1)
-    assert res1
-    
-    # case2
-    test_list2 = [3, 1, 4, 5]
-    Sum2 = 11
-    res2 = data_structure_lib.subset_sum(test_list2, Sum2)
-    assert not res2
-
-
-"""
-# BST
-def test_BST():
-    l = [randint(1, 100) for _ in range(20)]
-    print("sorted list:", sorted(l))
-    tree = data_structure_lib.BST(l)
-    if tree.search_min() != min(l):
-        print("search_min test failed")
-        sys.exit()
-    if tree.search_max() != max(l):
-        print("search_max test failed")
-        sys.exit()
-"""
-
-# --------------------------------------------------
-# math_lib
-
-
 # n進数変換
 def test_to_n_base():
     tmp = randint(1, 10)
     test_n = randint(1, 1000)
-    n_conversion = math_lib.base_n(test_n, tmp)
-    assert math_lib.base_10(n_conversion, tmp) == test_n
+    n_conversion = math_lib.nd_conv(test_n, tmp)
+    assert math_lib.nd_conv(n_conversion, tmp) == test_n
 
 
 # 最大公約数
@@ -107,6 +55,8 @@ def test_perm():
     assert perm_m_n == perm(test_m, test_n)
 
 # 階乗
+
+
 def test_factorial():
     _, test_n, _ = init()
     fact_n = math_lib.factorial(test_n)
@@ -130,6 +80,21 @@ def test_pos():
     pos_res = math_lib.pos(test_x, test_n, test_m)
     assert pos_x_n_m == pos_res
 
+
+# 逆元計算
+def test_inv():
+    test_n, test_m, _ = init()
+    if test_n < test_m:
+        test_n, test_m = test_m, test_n
+    if len(math_lib.make_divistors(test_n)) != 2:
+        print("test_m is not prime number")
+        return
+    inv_nm = math_lib.inv(test_n, test_m)
+    inv_nm2 = math_lib.ext_gcd(test_n, test_m)[1]
+    assert inv_nm == inv_nm2
+
+
+# 二項係数の剰余
 
 # --------------------------------------------------
 # main
