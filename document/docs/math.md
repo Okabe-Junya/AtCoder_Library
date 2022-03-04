@@ -8,6 +8,11 @@
 
 【コード】
 
+```python
+def n_sum(n):
+    return sum([int(i) for i in list(str(n))])
+```
+
 ## n進数変換
 
 【概要】
