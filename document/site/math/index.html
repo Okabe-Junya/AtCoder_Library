@@ -375,6 +375,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    逆元計算
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    拡張ユークリッドの互除法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    二項係数の剰余
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -549,6 +570,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    逆元計算
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    拡張ユークリッドの互除法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    二項係数の剰余
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -567,6 +609,9 @@
 <p>【概要】</p>
 <p>引数で与えられた数字の各位の和を返す．例えば，引数として<script type="math/tex">123</script>を与えると，<script type="math/tex">1 + 2 + 3 = 6</script> が返される．</p>
 <p>【コード】</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">n_sum</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))])</span>
+</code></pre></div>
 <h2 id="n">n進数変換<a class="headerlink" href="#n" title="Permanent link">&para;</a></h2>
 <p>【概要】</p>
 <p>第一引数に与えられた数値を，第二引数に与えられた基数に変換して返す．例えば10進数の<script type="math/tex">5</script>を2進数変換すると<script type="math/tex">101_{(2)}</script>となるため，101が返される．</p>
@@ -748,13 +793,78 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">pos</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="mi">0</span>
 </code></pre></div>
+<h2 id="_13">逆元計算<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>【概要】<br />
+第一引数を <script type="math/tex">a</script>，第二引数を <script type="math/tex">p</script> としたとき，<script type="math/tex">a^{-1} \mod\, p</script> を返す．</p>
+<p>【コード】</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">inv</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>  <span class="c1"># a &lt; m, mが素数</span>
+    <span class="k">def</span> <span class="nf">pos</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">pos</span><span class="p">((</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">x</span> <span class="o">%</span> <span class="n">m</span>
+        <span class="k">return</span> <span class="n">res</span>
+    <span class="k">return</span> <span class="n">pos</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">m</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+</code></pre></div>
+<p>【サンプル】</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h2 id="_14">拡張ユークリッドの互除法<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<p>【概要】<br />
+引数 <script type="math/tex">(a,b)</script> の組に対して <script type="math/tex">ax + by = \gcd(a, b)</script> の解を求める（ただし <script type="math/tex">a, b</script> は互いに素であるとする）．</p>
+<p>【コード】</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">ext_gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">a</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="n">ext_gcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="p">(</span><span class="n">a</span> <span class="o">//</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="n">g</span>
+</code></pre></div>
+<p>【サンプル】</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h2 id="_15">二項係数の剰余<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<p>【概要】<br />
+引数の組 <script type="math/tex">(n,k,p)</script> に対して，<script type="math/tex">n^k \mod\, p</script> を返す．</p>
+<p>【コード】</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">cmb_mod</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">permutation</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">//</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">r</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">inv</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>  
+        <span class="k">def</span> <span class="nf">pos</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">1</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">pos</span><span class="p">((</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">x</span> <span class="o">%</span> <span class="n">m</span>
+            <span class="k">return</span> <span class="n">res</span>
+        <span class="k">return</span> <span class="n">pos</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">m</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+
+    <span class="n">fact_k</span> <span class="o">=</span> <span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    <span class="n">invk</span> <span class="o">=</span> <span class="n">inv</span><span class="p">(</span><span class="n">fact_k</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">permutation</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">%</span> <span class="n">p</span><span class="p">)</span> <span class="o">*</span> <span class="n">invk</span> <span class="o">%</span> <span class="n">p</span>
+</code></pre></div>
+<p>【サンプル】</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最終更新日:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 17, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 4, 2022</span>
       
     
   </small>

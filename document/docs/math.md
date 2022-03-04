@@ -8,6 +8,11 @@
 
 【コード】
 
+```python
+def n_sum(n):
+    return sum([int(i) for i in list(str(n))])
+```
+
 ## n進数変換
 
 【概要】
@@ -283,4 +288,90 @@ def cmb(n, r):  # n > 0, r <= n
 
 >>> pos(10, 4, 100)
 0
+```
+
+## 逆元計算
+
+【概要】  
+第一引数を $a$，第二引数を $p$ としたとき，$a^{-1} \mod\, p$ を返す．
+
+【コード】
+
+```python
+def inv(a, m):  # a < m, mが素数
+    def pos(x, n, m):
+        if n == 0:
+            return 1
+        res = pos((x ** 2) % m, n // 2, m)
+        if n % 2 == 1:
+            res = res * x % m
+        return res
+    return pos(a, m - 2, m)
+```
+
+【サンプル】
+
+```python
+```
+
+## 拡張ユークリッドの互除法
+
+【概要】  
+引数 $(a,b)$ の組に対して $ax + by = \gcd(a, b)$ の解を求める（ただし $a, b$ は互いに素であるとする）．
+
+【コード】
+
+```python
+def ext_gcd(a, b):
+    if b == 0:
+        return 1, 0, a
+    else:
+        x, y, g = ext_gcd(b, a % b)
+        return y, x - (a // b) * y, g
+```
+
+【サンプル】
+
+```python
+```
+
+## 二項係数の剰余
+
+【概要】  
+引数の組 $(n,k,p)$ に対して，$n^k \mod\, p$ を返す．
+
+【コード】
+
+```python
+def cmb_mod(n, k, p):
+    def permutation(n, r):
+        def factorial(n):
+            if n == 0:
+                return 1
+            return n * factorial(n - 1)
+        return factorial(n) // factorial(n - r)
+
+    def factorial(n):
+        if n == 0:
+            return 1
+        return n * factorial(n - 1)
+
+    def inv(a, m):  
+        def pos(x, n, m):
+            if n == 0:
+                return 1
+            res = pos((x ** 2) % m, n // 2, m)
+            if n % 2 == 1:
+                res = res * x % m
+            return res
+        return pos(a, m - 2, m)
+
+    fact_k = factorial(k)
+    invk = inv(fact_k, p)
+    return (permutation(n, k) % p) * invk % p
+```
+
+【サンプル】
+
+```python
 ```
