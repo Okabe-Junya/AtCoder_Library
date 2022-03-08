@@ -3,7 +3,7 @@ import heapq
 import bisect
 
 
-#  二分探索
+# 二分探索
 def bin_search(num_list, ky):
     num_list.sort()
     pl = 0
@@ -182,6 +182,27 @@ print(ans)
 
 
 # 幅優先探索
+def bfs(G, d, queue):
+    """bfs: breadth-first search
+
+    Args:
+        G (list): G[i] is the list of neighbors of node i.
+        d (list): d[i] is the distance from the source to node i.
+        queue (collections.deque): queue of nodes to visit next.
+
+    Returns:
+        list: d[i] for all nodes i in the breadth-first order.
+            (if node i has no outgoing edges, then d[i] will be -1.)
+    """
+    
+    while queue:
+        next = queue.popleft()
+        for node in G[next]:
+            if d[node] == -1:
+                d[node] = d[next] + 1
+                queue.append(node)
+    return d
+
 
 # ダイクストラ法
 def dijkstra(adj, n, s=0):  # adj: 隣接行列，n: ノード数，s: 始点ノード
